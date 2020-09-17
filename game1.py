@@ -16,25 +16,29 @@ def outofrange():
 
 
 x = random.randint(0,10)
-print(x)
 
-for count in range(0,5):
+try:
 
-    y = int(input("Try to guess the correct number between 1 and 10: "))
+    for count in range(0,5):
 
-    if y == x:
-        justright()
-        break
+        y = int(input("Try to guess the correct number between 1 and 10: "))
 
-    elif y > x:
-        toohigh()
-        if y > 10:
-            outofrange()
+        if y == x:
+            justright()
+            break
 
-    elif y < x:
-        toolow()
-        if y < 0:
-            outofrange()
+        elif y > x:
+            toohigh()
+            if y > 10:
+                outofrange()
 
-if count == 4:
-    print("You are out of tries!")
+        elif y < x:
+            toolow()
+            if y < 0:
+                outofrange()
+
+    if count == 4:
+        print("You are out of tries!")
+
+except:
+    print("Please enter a number")
