@@ -21,7 +21,13 @@ try:
 
     for count in range(0,5):
 
-        y = int(input("Try to guess the correct number between 1 and 10: "))
+        y = (input("Try to guess the correct number between 1 and 10 or press 'q' to quit: "))
+        
+        if y == q
+            quit
+        
+        elif
+            y = int(y)
 
         if y == x:
             justright()
@@ -36,6 +42,7 @@ try:
             toolow()
             if y < 0:
                 outofrange()
+
 
     if count == 4:
         print("You are out of tries!")
