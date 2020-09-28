@@ -27,39 +27,39 @@ def guessing_game():
 
     x = random.randint(int(r),int(e))
 
-        try:
+    try:
 
-            for count in range(0, gues):
+        for count in range(0, gues):
 
-                y = (input("You have " + str(gues) + " tires to guess the correct number between " + r + " and " + e + " or type 'q' to quit: "))
+            y = (input("You have " + str(gues) + " tires to guess the correct number between " + r + " and " + e + " or type 'q' to quit: "))
         
-                if y == "q":
-                    quit
+            if y == "q":
+                quit
         
-                else:
-                    y = int(y)
+            else:
+                y = int(y)
 
-                if y == x:
-                    justright()
-                    break
+            if y == x:
+                justright()
+                break
 
-                elif y > x:
-                    toohigh()
-                    if y > int(e):
-                        outofrange()
+            elif y > x:
+                toohigh()
+                if y > int(e):
+                    outofrange()
 
-                elif y < x:
-                    toolow()
-                    if y < (int(r)):
-                        outofrange()
+            elif y < x:
+                toolow()
+                if y < (int(r)):
+                    outofrange()
 
 
-            if count == gues1:
+        if count == gues1:
             print("You are out of tries! " + "The correct number was " + str(x) + ". Thanks for playing!!!")
     
 
-        except:
-            print("Please enter a number")
+    except:
+        print("Please enter a number")
 
 while True:
     guessing_game()  
