@@ -19,14 +19,17 @@ r = input("Enter the start of your range: ")
 e = input("Enter the end of your range: ")
 
 print("Your range is (" + r + ", " + e + ")")
+gues = int(input("How many guesses would you like: "))
+
+gues1 = gues - 1
 
 x = random.randint(int(r),int(e))
 
 try:
 
-    for count in range(0,5):
+    for count in range(0, gues):
 
-        y = (input("Try to guess the correct number between " + r + " and " + e + " or type 'q' to quit: "))
+        y = (input("You have " + str(gues) + " tires to guess the correct number between " + r + " and " + e + " or type 'q' to quit: "))
         
         if y == "q":
             quit
@@ -49,8 +52,8 @@ try:
                 outofrange()
 
 
-    if count == 4:
-        print("You are out of tries! " + "The correct number was " + str(x) + ".")
+    if count == gues1:
+        print("You are out of tries! " + "The correct number was " + str(x) + ". Thanks for playing!!!")
 
 except:
     print("Please enter a number")
